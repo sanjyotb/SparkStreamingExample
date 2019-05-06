@@ -9,6 +9,7 @@ object MainApp extends App {
     .getOrCreate()
 
   import spark.implicits._
+  spark.sparkContext.setLogLevel("ERROR")
 
   val lines = spark.readStream
     .format("socket")
